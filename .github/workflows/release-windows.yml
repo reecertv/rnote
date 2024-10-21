@@ -33,7 +33,7 @@ jobs:
         continue-on-error: true
       - name: Install Rust
         run: |
-          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain stable -y
           source $HOME/.cargo/env
       - name: Install Rust Toolchain for x86_64
         run: rustup default stable
@@ -89,7 +89,7 @@ jobs:
         continue-on-error: true
       - name: Install Rust
         run: |
-          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain stable -y
           source $HOME/.cargo/env
       - name: Install ARM64 Rust Target
         run: |
