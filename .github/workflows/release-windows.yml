@@ -94,12 +94,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup for ARM64
-        run: meson setup --cross-file=path/to/your/aarch64-crossfile --prefix=C:/msys64/mingw64 -Dwin-installer-name='${{ steps.set_installer_name_arm64.outputs.name }}' _mesonbuild
+        run: meson setup --cross-file=build-aux/cross/aarch64-win.txt --prefix=C:/msys64/mingw64 -Dwin-installer-name='${{ steps.set_installer_name_arm64.outputs.name }}' _mesonbuild
       - name: Generate locale files
         run: meson compile rnote-gmo -C _mesonbuild
-      - name: Compile
+      - name: Compile for ARM64
         run: meson compile -v -C _mesonbuild
-      - name: Build installer
+      - name: Build ARM64 installer
         run: meson compile build-installer -C _mesonbuild
       - name: Upload installer (Workflow Artifact)
         uses: actions/upload-artifact@v3
