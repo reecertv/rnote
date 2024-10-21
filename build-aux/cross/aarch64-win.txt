@@ -3,6 +3,7 @@ c = 'clang'
 cpp = 'clang++'
 ar = 'llvm-ar'
 strip = 'llvm-strip'
+rustc = 'rustc'
 
 [host_machine]
 system = 'windows'
